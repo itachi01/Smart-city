@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City</title>
+    <style>
+        /* Set height of body and the document to 100% to enable "full page tabs" */
+        iframe{
+            width: 100%;
+            border: 2px solid #ccc;
+        }
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
+  h2 {
+    text-align: center;
+    background-color: black;
+  }
+  html { 
+    background: url(https://smartnet.niua.org/sites/default/files/pdfpreview/a16375486c2d4c0c2aa8212e2103a687.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  /* Style tab links */
+  .tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
+  
+  .tablink:hover {
+    background-color: rgb(4, 25, 94);
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  
+    </style>
+    <script>
+        function openPage(pageName, elmnt, color) {
+            // Hide all elements with class="tabcontent" by default */
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+          
+            // Remove the background color of all tablinks/buttons
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].style.backgroundColor = "";
+            }
+          
+            // Show the specific tab content
+            document.getElementById(pageName).style.display = "block";
+          
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
+          }
+          
+          // Get the element with id="defaultOpen" and click on it
+          document.getElementById("defaultOpen").click();
+          
+    </script>
+</head>
+<body>
+     <button class="tablink" onclick="openPage('ISWM', this)">ISWM</button>
+<button class="tablink" onclick="openPage('SWM', this)" id="defaultOpen">SWM</button>
+<button class="tablink" onclick="openPage('BED AVAILABILITY', this)">BED AVAILABILITY</button>
+<button class="tablink" onclick="openPage('LIGHT', this)">LIGHT</button>
+
+<div id="ISWM" class="tabcontent">
+    <h2>ISWM</h2>
+    <iframe src="https://iswm-bhopal.acceldash.com/iswm/playback" style="width:100%;height:100%"></iframe>
+</div>
+
+<div id="SWM" class="tabcontent">
+  <h2>SWM</h3>
+</div>
+
+<div id="BED AVAILABILITY" class="tabcontent">
+  <h2>BED AVAILABILITY</h2>
+  <iframe src="https://smartcitybhopal.egov.gen.in/" style="width:100%;height:375px;"></iframe>
+</div>
+
+<div id="LIGHT" class="tabcontent">
+  <h2>LIGHT</h2>
+  <iframe src="http://125.20.96.211:6081/" style="width:100%;height:100%"></iframe>
+</div>
+</body>
+</html>
